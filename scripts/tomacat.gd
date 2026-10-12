@@ -39,7 +39,7 @@ func _tiredness_tick() -> void:
 	var random := randi_range(1,10)
 	
 	if (random == 1):
-		boredom -= 1
+		tiredness -= 1
 		
 	if (tiredness <= 0):
 		im_tired.emit()
