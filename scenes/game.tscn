@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3sdcsj5qit57"]
 
-[ext_resource type="Script" uid="uid://dhcmjhhng2rwn" path="res://scenes/game.gd" id="1_lnu2h"]
+[ext_resource type="Script" uid="uid://dhcmjhhng2rwn" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dy2dsailrsi4i" path="res://assets/background.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://56cv6b8ka5au" path="res://scenes/tomacat.tscn" id="2_yqjtg"]
 
@@ -11,16 +11,13 @@ script = ExtResource("1_lnu2h")
 position = Vector2(18, 32)
 texture = ExtResource("1_uwrxv")
 
-[node name="Tomacat" parent="." unique_id=57102188 instance=ExtResource("2_yqjtg")]
+[node name="Tomacat" parent="." unique_id=26261256 instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true
-position = Vector2(14, 42)
+position = Vector2(11, 39)
 
 [node name="Tick" type="Timer" parent="." unique_id=1372757979]
 unique_name_in_owner = true
-wait_time = 0.1
+wait_time = 10.0
 autostart = true
 
-[connection signal="im_bored" from="Tomacat" to="." method="_on_tomacat_im_bored"]
-[connection signal="im_hungry" from="Tomacat" to="." method="_on_tomacat_im_hungry"]
-[connection signal="im_tired" from="Tomacat" to="." method="_on_tomacat_im_tired"]
 [connection signal="timeout" from="Tick" to="." method="_on_tick"]

@@ -1,23 +1,70 @@
 [gd_scene format=3 uid="uid://56cv6b8ka5au"]
 
-[ext_resource type="Texture2D" uid="uid://d354e0y77fw7r" path="res://assets/kitty.png" id="1_ms3uy"]
+[ext_resource type="Texture2D" uid="uid://d354e0y77fw7r" path="res://assets/kitty/idle.png" id="1_ms3uy"]
 [ext_resource type="Script" uid="uid://6n70cjffpcyv" path="res://scripts/tomacat.gd" id="2_1173y"]
+[ext_resource type="Script" uid="uid://b3c7pfhskxbp" path="res://scenes/toma_sprite.gd" id="3_1173y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1173y"]
+atlas = ExtResource("1_ms3uy")
+region = Rect2(0, 0, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kl8w8"]
 atlas = ExtResource("1_ms3uy")
-region = Rect2(0, 0, 20, 20)
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvqrr"]
+atlas = ExtResource("1_ms3uy")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7e47"]
+atlas = ExtResource("1_ms3uy")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amref"]
+atlas = ExtResource("1_ms3uy")
+region = Rect2(80, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rys16"]
+atlas = ExtResource("1_ms3uy")
+region = Rect2(100, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw1gy"]
+atlas = ExtResource("1_ms3uy")
+region = Rect2(120, 0, 20, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xqns2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1173y")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kl8w8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvqrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7e47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amref")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rys16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw1gy")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
-[node name="Tomacat" type="AnimatedSprite2D" unique_id=57102188]
-sprite_frames = SubResource("SpriteFrames_xqns2")
+[node name="Tomacat" type="Node2D" unique_id=26261256]
 script = ExtResource("2_1173y")
+
+[node name="TomaSprite" type="AnimatedSprite2D" parent="." unique_id=57102188]
+sprite_frames = SubResource("SpriteFrames_xqns2")
+animation = &"idle"
+script = ExtResource("3_1173y")
