@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://3sdcsj5qit57"]
+
+[ext_resource type="Texture2D" uid="uid://ck43mnro68awf" path="res://assets/placeholders/game_mockup.png" id="1_ebmjs"]
+
+[node name="Game" type="Node2D" unique_id=724130003]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=175561685]
+position = Vector2(18, 32)
+texture = ExtResource("1_ebmjs")
