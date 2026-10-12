@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Node2D
 
 @export var hunger := 10 
 @export var boredom := 10 
