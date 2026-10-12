@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://56cv6b8ka5au"]
+
+[ext_resource type="Texture2D" uid="uid://d354e0y77fw7r" path="res://assets/kitty.png" id="1_ms3uy"]
+[ext_resource type="Script" uid="uid://6n70cjffpcyv" path="res://scripts/tomacat.gd" id="2_1173y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl8w8"]
+atlas = ExtResource("1_ms3uy")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqns2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl8w8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tomacat" type="AnimatedSprite2D" unique_id=57102188]
+sprite_frames = SubResource("SpriteFrames_xqns2")
+script = ExtResource("2_1173y")
