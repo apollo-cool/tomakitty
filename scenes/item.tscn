@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cgfbo0whw13w6"]
+
+[ext_resource type="Script" uid="uid://upsawldh5rhl" path="res://scripts/item.gd" id="1_4gq7n"]
+
+[node name="item" type="Node2D" unique_id=2131909408]
+script = ExtResource("1_4gq7n")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2019030950]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=549321551]
+unique_name_in_owner = true
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -13,15 +13,26 @@ config_version=5
 config/name="Tomakitty"
 run/main_scene="uid://2ysj434au7v8"
 config/features=PackedStringArray("4.7", "Mobile")
-boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/unsafe_property_access=2
+gdscript/warnings/unsafe_method_access=2
+gdscript/warnings/unsafe_cast=2
+gdscript/warnings/unsafe_call_argument=2
+gdscript/warnings/unsafe_void_return=2
 
 [display]
 
 window/size/viewport_width=36
 window/size/viewport_height=64
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/size/window_width_override=288
+window/size/window_height_override=512
+window/energy_saving/keep_screen_on=false
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 window/handheld/orientation=1
 
 [editor]
@@ -42,3 +53,5 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

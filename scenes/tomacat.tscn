@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d354e0y77fw7r" path="res://assets/kitty/idle.png" id="1_ms3uy"]
 [ext_resource type="Script" uid="uid://6n70cjffpcyv" path="res://scripts/tomacat.gd" id="2_1173y"]
-[ext_resource type="Script" uid="uid://b3c7pfhskxbp" path="res://scenes/toma_sprite.gd" id="3_1173y"]
+[ext_resource type="Script" uid="uid://b3c7pfhskxbp" path="res://scripts/toma_sprite.gd" id="3_1173y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1173y"]
 atlas = ExtResource("1_ms3uy")

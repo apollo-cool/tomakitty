@@ -1,4 +1,5 @@
 extends Node2D
+class_name Tomacat
 
 @export var hunger := 10 
 @export var boredom := 10 
@@ -19,6 +20,7 @@ func _hunger_tick() -> void:
 		
 	if (hunger <= 0):
 		im_hungry.emit()
+		print("I'm hungry")
 
 func _boredom_tick() -> void:
 	if (boredom <= 0):
@@ -31,9 +33,10 @@ func _boredom_tick() -> void:
 		
 	if (boredom <= 0):
 		im_bored.emit()
+		print("I'm bored")
 		
 func _tiredness_tick() -> void:
-	if (boredom <= 0):
+	if (tiredness <= 0):
 		return 
 
 	var random := randi_range(1,10)
@@ -43,6 +46,7 @@ func _tiredness_tick() -> void:
 		
 	if (tiredness <= 0):
 		im_tired.emit()
+		print("I'm tired")
 
 ## This function allows you to play with Tomacat
 ## Puts his boredom stat at max
@@ -60,12 +64,8 @@ func feed() -> void:
 func bedtime() -> void:
 	tiredness = 10
 
+## This updates Tomacat's stats
 func on_tick() -> void:
 	_hunger_tick()
 	_boredom_tick()
 	_tiredness_tick()
-	
-	print("Hunger: " + str(hunger))
-	print("Boredom: " + str(boredom))
-	print("Tiredness: " + str(tiredness))
-	
