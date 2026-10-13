@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://0hswwu7ni0l1"]
+
+[ext_resource type="Script" uid="uid://lpilsq2n2ow0" path="res://scripts/ball.gd" id="1_cxlvu"]
+[ext_resource type="Texture2D" uid="uid://cax1o51tk7xop" path="res://assets/ball.png" id="2_cxlvu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xqns2"]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7cbr"]
+atlas = ExtResource("2_cxlvu")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxlvu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7cbr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ball" type="Node2D" unique_id=2131909408]
+script = ExtResource("1_cxlvu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2019030950]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1915568077]
+shape = SubResource("CircleShape2D_xqns2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=549321551]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_cxlvu")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
