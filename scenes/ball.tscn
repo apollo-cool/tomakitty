@@ -33,5 +33,4 @@ shape = SubResource("CircleShape2D_xqns2")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_cxlvu")
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input"]
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Area2D" to="." method="_on_input"]

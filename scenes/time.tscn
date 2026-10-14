@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckdwbel6dfyv3"]
+
+[ext_resource type="Script" uid="uid://ceqhgy5r3n47k" path="res://scripts/time.gd" id="1_hxfg6"]
+[ext_resource type="FontFile" uid="uid://biyi8jntm02ae" path="res://assets/fonts/aseprite-fonts/aseprite.otf" id="1_uoj08"]
+
+[node name="Time" type="Label" unique_id=734707818]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.5294118, 0.039215688, 0.47843137, 1)
+theme_override_fonts/font = ExtResource("1_uoj08")
+theme_override_font_sizes/font_size = 7
+text = "10:00 AM"
+script = ExtResource("1_hxfg6")
+metadata/_edit_use_anchors_ = true

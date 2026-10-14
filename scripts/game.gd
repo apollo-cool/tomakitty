@@ -28,7 +28,3 @@ func _on_tomacat_im_tired() -> void:
 
 func _on_tick() -> void:
 	tomacat.on_tick()
-
-
-func _on_tick_timeout() -> void:
-	pass # Replace with function body.
