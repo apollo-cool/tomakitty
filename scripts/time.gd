@@ -14,13 +14,16 @@ func _process(_delta: float) -> void:
 	var hour: String
 	var minute := str(time.minute)
 	
-	if (time.hour > 12):
+	if (time.hour >= 12):
 		hour = str(time.hour - 12)
 		meridiem = "PM"
 	else:
 		meridiem = "AM"
 		hour = str(time.hour)
-		
+	
+	if (time.hour == 12):
+		hour = "12"
+	
 	if (minute.length() < 2):
 		minute = "0" + minute
 	
