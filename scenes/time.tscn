@@ -20,3 +20,9 @@ theme_override_font_sizes/font_size = 7
 text = "10:00 AM"
 script = ExtResource("1_hxfg6")
 metadata/_edit_use_anchors_ = true
+
+[node name="MinuteTimer" type="Timer" parent="." unique_id=2108255361]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="MinuteTimer" to="." method="_on_minute_passed"]

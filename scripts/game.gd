@@ -22,7 +22,6 @@ func _on_tomacat_im_bored() -> void:
 func _on_tomacat_im_hungry() -> void:
 	print("Tomacat is hungry")
 
-
 func _on_tomacat_im_tired() -> void:
 	print("Tomacat is tired")
 
