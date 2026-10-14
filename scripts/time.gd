@@ -17,6 +17,9 @@ func _process(_delta: float) -> void:
 	if (time.hour >= 12):
 		hour = str(time.hour - 12)
 		meridiem = "PM"
+	elif (time.hour == 24):
+		meridiem = "AM"
+		hour = "12"
 	else:
 		meridiem = "AM"
 		hour = str(time.hour)
