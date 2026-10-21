@@ -1,0 +1,25 @@
+@onready var hunger_bar: ProgressBar = $CanvasLayer/ProgressBar # Adjust path to your bar
+@onready var hunger_timer: Timer = $HungerTimer
+@export var max_hunger: float = 100.0
+@export var hunger_depletion_rate: float = 1.0 # Amount lost per timer tick
+var current_hunger: float
+func _ready() -> void:
+	current_hunger = max_hunger
+	_update_hunger_ui()
+func _on_hunger_timer_timeout() -> void:
+	deplete_hunger(hunger_depletion_rate)
+func deplete_hunger(amount: float) -> void:
+	current_hunger -= amount
+	current_hunger = clamp(current_hunger, 0.0, max_hunger) # Keep value between 0 and max
+	_update_hunger_ui()
+	
+	if current_hunger <= 0:
+		_on_starving()
+func feed_player(amount: float) -> void:
+	current_hunger += amount
+	current_hunger = clamp(current_hunger, 0.0, max_hunger)
+	_update_hunger_ui()
+func _update_hunger_ui() -> void:
+	hunger_bar.value = current_hunger
+func _on_starving() -> void:
+	print("The cat is starving!")
