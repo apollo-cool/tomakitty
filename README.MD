@@ -18,3 +18,11 @@ Tomakitty is a work in progress; however, here's a list of planned features just
 - Time
 - Boredom System
 - Idle animation
+
+## Installation
+
+```bash
+git clone https://github.com/apollo-cool/tomakitty.git
+```
+
+From there just open the project on Godot.
