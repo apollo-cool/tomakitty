@@ -19,6 +19,10 @@ func _on_tomakitty_slept(bed: Bed) -> void:
 	bed.queue_free()
 	tomacat.bedtime()
 
+func _on_slept(bed: Bed) -> void:
+	bed.queue_free()
+	tomacat.bedtime()
+
 func _on_tomacat_im_bored() -> void:
 	var ball: Ball = ball_resource.instantiate()
 	add_child(ball)
