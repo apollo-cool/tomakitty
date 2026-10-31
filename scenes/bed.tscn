@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d2l58qtnmcgp4"]
+
+[ext_resource type="Script" uid="uid://dlmh7ausr85ao" path="res://scripts/bed.gd" id="1_fqty4"]
+[ext_resource type="Texture2D" uid="uid://blifdhm8xdle" path="res://assets/bed.png" id="2_fqty4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqns2"]
+size = Vector2(20, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raxto"]
+atlas = ExtResource("2_fqty4")
+region = Rect2(0, 0, 21, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fqty4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raxto")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bed" type="Node2D" unique_id=2131909408]
+script = ExtResource("1_fqty4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2019030950]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1154892799]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xqns2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=549321551]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_fqty4")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

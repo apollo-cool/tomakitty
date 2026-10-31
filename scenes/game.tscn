@@ -19,7 +19,7 @@ position = Vector2(11, 39)
 
 [node name="Tick" type="Timer" parent="." unique_id=1372757979]
 unique_name_in_owner = true
-wait_time = 10.0
+wait_time = 0.007
 autostart = true
 
 [connection signal="im_bored" from="Tomacat" to="." method="_on_tomacat_im_bored"]
