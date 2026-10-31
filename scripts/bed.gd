@@ -1,5 +1,4 @@
 extends Node2D
-
 class_name Bed
 signal tomakitty_slept
 

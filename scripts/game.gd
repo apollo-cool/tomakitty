@@ -7,6 +7,7 @@ class_name Game
 
 @export var ball_resource: PackedScene
 @export var bed_resource: PackedScene
+@export var food_resource: PackedScene
 
 @onready var tomacat: Tomacat = %Tomacat
 @onready var tick: Timer = %Tick
