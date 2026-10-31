@@ -7,6 +7,7 @@ class_name Game
 
 @export var ball_resource: PackedScene
 @export var bed_resource: PackedScene
+@export var food_resource: PackedScene
 
 @onready var tomacat: Tomacat = %Tomacat
 @onready var tick: Timer = %Tick
@@ -30,11 +31,16 @@ func _on_tomacat_im_bored() -> void:
 	ball.done_playing.connect(_on_player_played)
 
 func _on_tomacat_im_hungry() -> void:
-	print("Tomacat is hungry")
+	var food: Food = food_resource.instantiate()
+	add_child(food)
+	food.position = food_position
+	food.food_eaten.connect(_on_food_eaten)
+	
+func _on_food_eaten(food: Food) -> void:
+	food.queue_free()
+	tomacat.feed()
 
 func _on_tomacat_im_tired() -> void:
-	print("Tomacat is tired")
-	
 	var bed: Bed = bed_resource.instantiate()
 	add_child(bed)
 	bed.position = bed_position
