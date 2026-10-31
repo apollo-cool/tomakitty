@@ -4,10 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dy2dsailrsi4i" path="res://assets/background.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://0hswwu7ni0l1" path="res://scenes/ball.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://56cv6b8ka5au" path="res://scenes/tomacat.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://d2l58qtnmcgp4" path="res://scenes/bed.tscn" id="3_iywne"]
 
 [node name="Game" type="Node2D" unique_id=724130003]
 script = ExtResource("1_lnu2h")
+bed_position = Vector2(14, 52)
 ball_resource = ExtResource("2_lbhrr")
+bed_resource = ExtResource("3_iywne")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1596435337]
 position = Vector2(18, 32)
@@ -15,7 +18,7 @@ texture = ExtResource("1_uwrxv")
 
 [node name="Tomacat" parent="." unique_id=26261256 instance=ExtResource("2_yqjtg")]
 unique_name_in_owner = true
-position = Vector2(11, 39)
+position = Vector2(12, 37)
 
 [node name="Tick" type="Timer" parent="." unique_id=1372757979]
 unique_name_in_owner = true
@@ -23,4 +26,5 @@ wait_time = 0.007
 autostart = true
 
 [connection signal="im_bored" from="Tomacat" to="." method="_on_tomacat_im_bored"]
+[connection signal="im_tired" from="Tomacat" to="." method="_on_tomacat_im_tired"]
 [connection signal="timeout" from="Tick" to="." method="_on_tick"]
