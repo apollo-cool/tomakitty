@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ckefjhw8dwdw8"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_af40f"]
+[ext_resource type="Texture2D" uid="uid://l7n711wfjcmo" path="res://assets/pizza-pan-w-fish.png" id="2_af40f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqns2"]
+size = Vector2(15, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_370ap"]
+atlas = ExtResource("2_af40f")
+region = Rect2(0, 0, 21, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjm1k"]
+atlas = ExtResource("2_af40f")
+region = Rect2(21, 0, 21, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xven1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_370ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjm1k")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Food" type="Node2D" unique_id=2131909408]
+script = ExtResource("1_af40f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2019030950]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=202221034]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_xqns2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=549321551]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_xven1")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
