@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://fv3q4gnb5wdg" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://3sdcsj5qit57" path="res://scenes/game.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://bwh6cet8nkmsb" path="res://scripts/gui.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ckdwbel6dfyv3" path="res://scenes/time.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node" unique_id=1000122704]
@@ -16,7 +15,6 @@ anchors_preset = 0
 offset_right = 36.0
 offset_bottom = 64.0
 mouse_filter = 2
-script = ExtResource("3_jyhfs")
 
 [node name="Time" parent="GUI" unique_id=734707818 instance=ExtResource("3_sugp2")]
 layout_mode = 1

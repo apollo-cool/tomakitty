@@ -13,6 +13,7 @@ config_version=5
 config/name="Tomakitty"
 run/main_scene="uid://2ysj434au7v8"
 config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [debug]
@@ -32,6 +33,7 @@ window/size/window_width_override=288
 window/size/window_height_override=512
 window/energy_saving/keep_screen_on=false
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 window/handheld/orientation=1
 
